@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
+
+    <!-- <include
+         layout="@layout/app_bar_main"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <xjh.livewallpaper.listener.StaggeredGridPullRefreshView
+            android:id="@+id/staggeredGridPullRefreshView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <xjh.livewallpaper.view.ImageTxtView
+                android:id="@+id/imageTv_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                app:image_padding="10dp"
+                app:image_selected="@mipmap/menu"
+                app:text="菜单"
+                app:text_size="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <xjh.livewallpaper.view.ImageTxtView
+                android:id="@+id/imageTv_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:image_no_selected="@mipmap/sound_off"
+                app:image_padding="10dp"
+                app:image_selected="@mipmap/sound_on"
+                app:text="声音"
+                app:text_size="15sp" />
+            <View
+                android:layout_width="15dp"
+                android:layout_height="0dp"/>
+
+            <xjh.livewallpaper.view.ImageTxtView
+                android:id="@+id/imageTv_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:image_padding="10dp"
+                app:image_selected="@mipmap/file"
+                app:text="本地"
+                app:text_size="15sp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <!-- <android.support.design.widget.NavigationView
+         android:id="@+id/nav_view"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+         android:layout_gravity="start"
+         android:fitsSystemWindows="true"
+         app:headerLayout="@layout/nav_header_main"
+         app:menu="@menu/activity_main_drawer" />-->
+
+    <xjh.livewallpaper.view.TabListView
+        android:id="@+id/tab_list_view"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#660a0c0d"
+        android:fitsSystemWindows="true" />
+
+
+</android.support.v4.widget.DrawerLayout>

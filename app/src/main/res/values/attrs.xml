@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressBarView">
+        <attr name="layout_height" format="dimension"></attr>
+        <attr name="background_color" format="color"></attr>
+        <attr name="progress_color" format="color"></attr>
+    </declare-styleable>
+    <declare-styleable name="ImageTxtView">
+        <attr name="text" format="string"></attr>
+        <attr name="image_selected" format="reference" />
+        <attr name="image_no_selected" format="reference" />
+        <attr name="text_color" format="color" />
+        <attr name="image_padding" format="dimension" />
+        <attr name="text_size" format="dimension" />
+        <attr name="image_padding_bottom" format="dimension"/>
+    </declare-styleable>
+</resources>

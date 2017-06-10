@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">猫咪桌面</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="silence">静音</string>
+    <string name="menu">菜单</string>
+</resources>

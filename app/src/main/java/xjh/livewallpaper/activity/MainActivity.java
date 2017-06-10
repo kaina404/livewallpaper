@@ -120,12 +120,13 @@ public class MainActivity extends BaseActivity implements INetCall, TabListView.
         if (bean == null || bean.getData() == null || Tool.isEmpty(video_list = bean.getData().getVideo_list())) {
             video_list = new ArrayList<>();
         }
-        if (bean.getData().getPage() == 1) {
+        if ((currentPage = bean.getData().getPage()) == 1) {
             allData.clear();
             staggeredGridPullRefreshView.setScrollStatus(PullRefreshRecyclerView.ScrollStatus.REFRESH_FINISH);
         } else {
             staggeredGridPullRefreshView.setScrollStatus(PullRefreshRecyclerView.ScrollStatus.LOAD_FINISH);
         }
+        //设置当前页面的page值
         allData.addAll(video_list);
         recyclerViewAdapter.setData(allData);
 
@@ -177,13 +178,13 @@ public class MainActivity extends BaseActivity implements INetCall, TabListView.
 
     @Override
     public void onSelect(boolean select, View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.imageTv_sound:
                 SpUtils spUtils = new SpUtils();
-                if(select){
-                    spUtils.setString(Contants.SpUtils.SP_SOUND_ON, UUID.randomUUID()+"");
-                }else {
-                    spUtils.setString(Contants.SpUtils.SP_SOUND_OFF, UUID.randomUUID()+"");
+                if (select) {
+                    spUtils.setString(Contants.SpUtils.SP_SOUND_ON, UUID.randomUUID() + "");
+                } else {
+                    spUtils.setString(Contants.SpUtils.SP_SOUND_OFF, UUID.randomUUID() + "");
                 }
                 break;
             case R.id.imageTv_menu:
